@@ -1,0 +1,44 @@
+# This is supposed to automatically build and publish a UI after a new commit is pushed
+# so that the next build of the documentation can grab the latest UI package
+# However, I'm not sure how to generate a URL to download the latest published artifact;
+# looks like this is not implemented yet: https://github.com/actions/upload-artifact/issues/21
+# So for now we have to run the build manually and include the build/ui-bundle.zip file directly
+# in the repository
+
+#name: Build and publish UI
+#on: [push]
+#jobs:
+#  build_and_publish:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v2
+#
+#      - name: npm install
+#        run: |
+#          npm install
+#
+#      - name: package the UI
+#        run: |
+#          gulp pack
+#
+#      - name: Publish UI artifact
+#        uses: actions/upload-artifact@v1
+#        with:
+#          name: ui-bundle.zip
+#          path: build/ui-bundle.zip
+
+# Temporary solution - instead of building the UI as an artifact, we verify
+# that ui bundle is included directly in the repo
+name: Verify that there is a build/ui-bundle.zip file
+on: [push]
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Verify that there is a build/ui-bundle.zip
+        run: |
+          [ -f build/ui-bundle.zip ]

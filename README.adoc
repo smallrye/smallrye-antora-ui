@@ -1,3 +1,20 @@
+= Antora UI for SmallRye documentation
+
+== To build:
+
+Execute `gulp pack`.
+When submitting a pull request, don't forget to run the build and include the resulting `build/ui-bundle.zip` in your commit to keep it up-to-date.
+
+== To run the preview:
+
+Execute `gulp preview`.
+
+== Gulp
+
+If you don't have Gulp installed, but you do have npm, you can run `npm install` to download all dependencies and then use `npx gulp ...`.
+
+---
+
 = Antora Default UI
 // Settings:
 :experimental:
