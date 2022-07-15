@@ -1,5 +1,11 @@
+.body {
+  padding-top: 2.5rem;
+}
+
 @media screen and (min-width: 1024px) {
   .body {
     display: flex;
+    max-width: var(--body-width);
+    margin-inline: auto;
   }
 }

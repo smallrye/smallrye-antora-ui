@@ -1,7 +1,19 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{{{or site.url siteRootPath}}}">{{site.title}}</a>
+      {{> nav-toggle}}
+
+      <a class="navbar-item title" href="{{{relativize page.componentVersion.url}}}">{{page.componentVersion.title}}</a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <span class="navbar-link">{{page.componentVersion.displayVersion}}</span>
+        <div class="navbar-dropdown navbar-menu">
+          {{#each page.component.versions}}
+            <a class="navbar-item {{#if (eq this.version @root.page.version)}} is-current{{/if}}" href="{{{relativize this.url}}}">{{this.displayVersion}}</a>
+          {{/each}}
+        </div>
+      </div>
+
       {{#if env.SITE_SEARCH_PROVIDER}}
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
@@ -9,36 +21,28 @@
         </div>
       </div>
       {{/if}}
+
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
+
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="#">Home</a>
+        {{#if (nonempty site.components)}}
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Products</a>
+          <span class="navbar-link">Projects</span>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Product A</a>
-            <a class="navbar-item" href="#">Product B</a>
-            <a class="navbar-item" href="#">Product C</a>
+            {{#each site.components}}
+              <a class="navbar-item" href="{{{relativize ./latestVersion/url}}}">{{{./title}}}</a>
+            {{/each}}
           </div>
         </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Services</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Service A</a>
-            <a class="navbar-item" href="#">Service B</a>
-            <a class="navbar-item" href="#">Service C</a>
-          </div>
-        </div>
-        <div class="navbar-item">
-          <span class="control">
-            <a class="button is-primary" href="#">Download</a>
-          </span>
-        </div>
+        {{/if}}
+
+        <a class="navbar-item" href="https://smallrye.io/">SmallRye.io main website</a>
       </div>
     </div>
   </nav>

@@ -1,80 +1,66 @@
-/*! Adapted from the GitHub style by Vasily Polovnyov <vast@whiteants.net> */
-.hljs-comment,
-.hljs-quote {
-  color: #998;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: var(--monospace-font-weight-bold);
-}
-
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
+.hljs-number {
+  color: var(--hl-color-number);
 }
 
 .hljs-string,
+.hljs-literal,
 .hljs-doctag {
-  color: #d14;
-}
-
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: var(--monospace-font-weight-bold);
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: var(--monospace-font-weight-bold);
-}
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
+  color: var(--hl-color-string);
 }
 
 .hljs-regexp,
 .hljs-link {
-  color: #009926;
+  color: var(--hl-color-special);
 }
 
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
+.hljs-title,
+.hljs-section {
+  color: var(--hl-color-title);
 }
 
+.hljs-constant {
+  color: var(--hl-color-constant);
+}
+
+.hljs-keyword,
 .hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
+.hljs-type,
+.hljs-tag,
+.hljs-name,
+.hljs-subst {
+  color: var(--hl-color-keyword);
 }
 
-.hljs-meta {
-  color: #999;
-  font-weight: var(--monospace-font-weight-bold);
+.hljs-comment,
+.hljs-quote {
+  color: var(--hl-color-comment);
+  font-style: italic;
 }
 
-.hljs-deletion {
-  background: #fdd;
+.hljs-meta,
+.hljs-attr,
+.hljs-attribute {
+  color: var(--hl-color-meta);
+}
+
+.hljs-operator {
+  color: var(--hl-color-operator);
+}
+
+.hljs-punctuation {
+  color: var(--hl-color-punctuation);
+}
+
+.hljs-comment {
+  color: var(--hl-color-comment);
 }
 
 .hljs-addition {
-  background: #dfd;
+  background: rgba(11, 213, 112, 0.15);
+}
+
+.hljs-deletion {
+  background: rgba(245, 80, 61, 0.15);
 }
 
 .hljs-emphasis {

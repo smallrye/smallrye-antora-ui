@@ -20,7 +20,6 @@
 .toc.sidebar .toc-menu h3 {
   display: flex;
   flex-direction: column;
-  height: 2.5rem;
   justify-content: flex-end;
 }
 

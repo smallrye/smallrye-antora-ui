@@ -14,7 +14,7 @@ Ei nonumy deseruisse ius.
 Mel id omnes verear.
 Vis no velit audiam, sonet <<dependencies,praesent>> eum ne.
 *Prompta eripuit* nec ad.
-Integer diam enim, dignissim eget eros et, ultricies mattis odio.
+Integer diam enim, dignissim eget eros et, _ultricies mattis_ odio.
 --
 
 Vestibulum consectetur nec urna a luctus.
@@ -34,6 +34,9 @@ Eu mea inani iriure.footnote:[Quisque porta facilisis tortor, vitae bibendum vel
 [,json]
 ----
 {
+  "foo": 1,
+  "bar": true,
+  "baz": null,
   "name": "module-name",
   "version": "10.0.1",
   "description": "An example module to illustrate the usage of package.json",
@@ -43,6 +46,80 @@ Eu mea inani iriure.footnote:[Quisque porta facilisis tortor, vitae bibendum vel
     "lint": "eslint"
   }
 }
+----
+
+[source,java]
+----
+package quickstart;
+
+import javax.enterprise.context.ApplicationScoped;
+
+import org.eclipse.microprofile.reactive.messaging.Incoming;
+import org.eclipse.microprofile.reactive.messaging.Outgoing;
+
+import io.smallrye.mutiny.Multi;
+
+/**
+ * Foo.
+ * <p>
+ * Bar. Baz.
+ *
+ * @author Quux
+ */
+@ApplicationScoped
+public class ReactiveMessagingExample extends Object {
+    private long a = 0L;
+
+    @Incoming("sink")
+    public void sink(String word) {
+        this.a++;
+        System.out.println(">> " + word); // <1>
+    }
+
+    @Outgoing("source")
+    public Multi<String> source() {
+        return Multi.createFrom().items("Hello", "World", "!"); // <2>
+    }
+}
+----
+
+<1> Foo bar.
+<2> Baz quux.
+
+[source,xml]
+----
+<foo>
+  <bar baz="quux">text</bar>
+  <frob/>
+</foo>
+----
+
+[source,css]
+----
+:root > * {
+  --md-code-hl-string-color: #0FF1CE;
+}
+
+p#my-id {
+  color: red;
+  content: "foobar";
+}
+----
+
+[source,diff]
+----
+--- languages/ini.js    (revision 199)
++++ languages/ini.js    (revision 200)
+@@ -1,8 +1,7 @@
+ hljs.LANGUAGES.ini =
+ {
+   case_insensitive: true,
+-  defaultMode:
+-  {
++  defaultMode: {
+     contains: ['comment', 'title', 'setting'],
+     illegal: '[^\\s]'
+   },
 ----
 
 .Example paragraph syntax
@@ -263,6 +340,7 @@ Watch out!
 ====
 
 [IMPORTANT]
+.Feeding the Werewolves
 ====
 Don't forget this step!
 ====
