@@ -17,15 +17,12 @@
 }
 
 .nav-toggle {
-  background: url(../img/menu.svg) no-repeat 50% 47.5%;
-  background-size: 49%;
-  border: none;
-  outline: none;
-  line-height: inherit;
-  padding: 0;
-  height: var(--toolbar-height);
-  width: var(--toolbar-height);
-  margin-right: -0.25rem;
+  background-color: var(--color-white);
+  mask-image: url(../img/menu.svg);
+  mask-size: 100%;
+  height: calc(var(--navbar-height) / 2);
+  width: calc(var(--navbar-height) / 2);
+  margin: calc(var(--navbar-height) / 4);
 }
 
 @media screen and (min-width: 1024px) {
@@ -35,8 +32,7 @@
 }
 
 .nav-toggle.is-active {
-  background-image: url(../img/back.svg);
-  background-size: 41.5%;
+  mask-image: url(../img/back.svg);
 }
 
 .home-link {
@@ -52,17 +48,26 @@
   background-image: url(../img/home.svg);
 }
 
-.edit-this-page {
+.doc .edit-this-page {
   display: none;
-  padding-right: 0.5rem;
 }
 
 @media screen and (min-width: 1024px) {
-  .edit-this-page {
+  .doc .edit-this-page {
     display: block;
+    float: right;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    height: calc(26 / var(--rem-base) * 1rem);
+    width: calc(26 / var(--rem-base) * 1rem);
+    color: var(--toolbar-muted-color);
   }
-}
 
-.toolbar .edit-this-page a {
-  color: var(--toolbar-muted-color);
+  .doc .edit-this-page:hover {
+    color: var(--link_hover-font-color);
+  }
+
+  .doc .edit-this-page svg {
+    fill: currentColor;
+  }
 }

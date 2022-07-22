@@ -3,6 +3,7 @@
 
   var article = document.querySelector('article.doc')
   var toolbar = document.querySelector('.toolbar')
+  var header = document.querySelector('.header')
 
   function decodeFragment (hash) {
     return hash && (~hash.indexOf('%') ? decodeURIComponent(hash) : hash).slice(1)
@@ -18,7 +19,11 @@
       window.location.hash = '#' + this.id
       e.preventDefault()
     }
-    window.scrollTo(0, computePosition(this, 0) - toolbar.getBoundingClientRect().bottom)
+
+    var offset = 0
+    offset += (toolbar ? toolbar.getBoundingClientRect().bottom : 0)
+    offset += (header ? header.getBoundingClientRect().bottom : 0)
+    window.scrollTo(0, computePosition(this, 0) - offset)
   }
 
   window.addEventListener('load', function jumpOnLoad (e) {

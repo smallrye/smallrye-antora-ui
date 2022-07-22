@@ -17,6 +17,18 @@
   --color-jet-70: #222;
   --color-jet-80: #191919;
   --color-black: #000;
+  --color-smallrye-light-blue: #43b3d7;
+  /* code highlighitng colors */
+  --hl-color-number: rgb(213, 42, 42);
+  --hl-color-string: rgb(28, 125, 77);
+  --hl-color-special: rgb(219, 20, 87);
+  --hl-color-title: rgb(168, 70, 185);
+  --hl-color-constant: rgb(110, 89, 217);
+  --hl-color-keyword: rgb(63, 110, 198);
+  --hl-color-meta: rgba(0, 0, 0, 0.54);
+  --hl-color-operator: rgba(0, 0, 0, 0.54);
+  --hl-color-punctuation: rgba(0, 0, 0, 0.54);
+  --hl-color-comment: rgba(0, 0, 0, 0.54);
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
   --body-font-size: 1.0625em; /* 17px */
@@ -24,27 +36,27 @@
   --body-font-size--print: 0.9375em; /* 15px */
   --body-line-height: 1.15;
   --body-font-color: var(--color-jet-70);
-  --body-font-family: "Roboto", sans-serif;
-  --body-font-weight-bold: 500;
-  --monospace-font-family: "Roboto Mono", monospace;
-  --monospace-font-weight-bold: 500;
+  --body-font-family: "Red Hat Text", sans-serif;
+  --body-font-weight-bold: bold;
+  --monospace-font-family: "Ubuntu Mono", monospace;
+  --monospace-font-weight-bold: bold;
   /* base */
   --body-background: var(--color-white);
-  --panel-background: var(--color-smoke-30);
+  --panel-background: var(--color-white);
   --panel-border-color: var(--color-smoke-90);
   --scrollbar-track-color: var(--color-smoke-30);
   --scrollbar-thumb-color: var(--color-gray-10);
   --scrollbar_hover-thumb-color: var(--color-gray-30);
   /* navbar */
-  --navbar-background: var(--color-jet-80);
+  --navbar-background: var(--color-smallrye-light-blue);
   --navbar-font-color: var(--color-white);
-  --navbar_hover-background: var(--color-black);
+  --navbar_hover-background: var(--body-font-color);
   --navbar-button-background: var(--color-white);
   --navbar-button-border-color: var(--panel-border-color);
   --navbar-button-font-color: var(--body-font-color);
   --navbar-menu-border-color: var(--panel-border-color);
   --navbar-menu-background: var(--color-white);
-  --navbar-menu-font-color: var(--body-font-color);
+  --navbar-menu-font-color: var(--color-white);
   --navbar-menu_hover-background: var(--color-smoke-50);
   /* nav */
   --nav-background: var(--panel-background);
@@ -62,30 +74,36 @@
   --page-version-menu-background: var(--color-smoke-70);
   --page-version-missing-font-color: var(--color-gray-40);
   /* admonitions */
-  --caution-color: #a0439c;
-  --caution-on-color: var(--color-white);
-  --important-color: #d32f2f;
-  --important-on-color: var(--color-white);
-  --note-color: #217ee7;
-  --note-on-color: var(--color-white);
-  --tip-color: #41af46;
-  --tip-on-color: var(--color-white);
-  --warning-color: #e18114;
-  --warning-on-color: var(--color-white);
+  --caution-border-color: rgb(124, 77, 255);
+  --caution-color: rgba(124, 77, 255, 0.15);
+  --caution-on-color: var(--color-black);
+  --important-border-color: rgb(255, 23, 68);
+  --important-color: rgba(255, 23, 68, 0.15);
+  --important-on-color: var(--color-black);
+  --note-border-color: rgb(68, 138, 255);
+  --note-color: rgba(68, 138, 255, 0.15);
+  --note-on-color: var(--color-black);
+  --tip-border-color: rgb(0, 191, 165);
+  --tip-color: rgba(0, 191, 165, 0.15);
+  --tip-on-color: var(--color-black);
+  --warning-border-color: rgb(255, 145, 0);
+  --warning-color: rgba(255, 145, 0, 0.15);
+  --warning-on-color: var(--color-black);
   /* doc */
   --doc-font-color: var(--color-jet-50);
   --doc-font-size: inherit;
   --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
-  --doc-line-height: 1.6;
-  --doc-margin: 0 auto;
-  --doc-margin--desktop: 0 2rem;
-  --heading-font-color: var(--color-jet-80);
-  --heading-font-weight: normal;
+  --doc-line-height: 1.7;
+  --doc-margin: 0 1rem;
+  --doc-margin--desktop: var(--doc-margin);
+  --heading-font-color: rgba(0, 0, 0, 0.87);
+  --heading-font-weight: 300;
+  --top-heading-font-color: rgba(0, 0, 0, 0.54);
   --alt-heading-font-weight: var(--body-font-weight-bold);
   --section-divider-color: var(--panel-border-color);
-  --link-font-color: #1565c0;
-  --link_hover-font-color: #104d92;
-  --link_unresolved-font-color: var(--important-color);
+  --link-font-color: #1e90ff;
+  --link_hover-font-color: var(--link-font-color);
+  --link_unresolved-font-color: var(--important-border-color);
   --abstract-background: var(--color-smoke-70);
   --abstract-font-color: var(--color-jet-20);
   --abstract-border-color: var(--panel-border-color);
@@ -93,13 +111,13 @@
   --admonition-label-font-weight: var(--body-font-weight-bold);
   --caption-font-color: var(--color-gray-70);
   --caption-font-weight: var(--body-font-weight-bold);
-  --code-background: var(--panel-background);
+  --code-background: var(--color-smoke-30);
   --code-font-color: var(--body-font-color);
   --example-background: var(--color-white);
-  --example-border-color: var(--color-gray-70);
+  --example-border-color: var(--color-gray-40);
   --kbd-background: var(--panel-background);
   --kbd-border-color: var(--color-gray-10);
-  --pre-background: var(--panel-background);
+  --pre-background: var(--color-smoke-30);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: var(--color-gray-50);
   --quote-background: var(--panel-background);
@@ -117,11 +135,11 @@
   --toc-line-height: 1.2;
   /* footer */
   --footer-line-height: var(--doc-line-height);
-  --footer-background: var(--color-smoke-90);
-  --footer-font-color: var(--color-gray-70);
-  --footer-link-font-color: var(--color-jet-80);
+  --footer-background: rgba(0, 0, 0, 0.8);
+  --footer-font-color: rgba(255, 255, 255, 0.7);
+  --footer-link-font-color: rgba(255, 255, 255, 0.9);
   /* dimensions and positioning */
-  --navbar-height: calc(63 / var(--rem-base) * 1rem);
+  --navbar-height: calc(52 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
   --drawer-height: var(--toolbar-height);
   --body-top: var(--navbar-height);
@@ -137,6 +155,7 @@
   --toc-width--widescreen: calc(216 / var(--rem-base) * 1rem);
   --doc-max-width: calc(720 / var(--rem-base) * 1rem);
   --doc-max-width--desktop: calc(828 / var(--rem-base) * 1rem);
+  --body-width: 75rem;
   /* stacking */
   --z-index-nav: 1;
   --z-index-toolbar: 2;

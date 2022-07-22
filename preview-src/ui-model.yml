@@ -124,3 +124,25 @@ page:
       - content: Some Code
         url: '/xyz/5.2/index.html#some-code'
         urlType: internal
+      - content: Whoohaa
+        items:
+        - content: Foo
+          url: '#'
+          urlType: fragment
+        - content: Bar
+          url: '#'
+          urlType: fragment
+        - content: Baz
+          url: '#'
+          urlType: fragment
+        - content: Quux
+          items:
+            - content: A
+              url: '#'
+              urlType: fragment
+            - content: B
+              url: '#'
+              urlType: fragment
+            - content: C
+              url: '#'
+              urlType: fragment

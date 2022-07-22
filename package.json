@@ -1,11 +1,11 @@
 {
-  "name": "@antora/ui-default",
-  "description": "An archetype project that produces a UI for creating documentation sites with Antora",
-  "homepage": "https://gitlab.com/antora/antora-ui-default",
+  "name": "smallrye-antora-ui",
+  "description": "SmallRye Antora UI",
+  "homepage": "https://github.com/smallrye/smallrye-antora-ui",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/antora/antora-ui-default.git"
+    "url": "https://github.com/smallrye/smallrye-antora-ui.git"
   },
   "engines": {
     "node": ">= 8.0.0"
@@ -17,6 +17,8 @@
     "@asciidoctor/core": "~2.2",
     "@fontsource/roboto": "~4.5",
     "@fontsource/roboto-mono": "~4.5",
+    "@fontsource/red-hat-text": "~4.5",
+    "@fontsource/ubuntu-mono": "~4.5",
     "autoprefixer": "~9.7",
     "browser-pack-flat": "~3.4",
     "browserify": "~16.5",
@@ -39,7 +41,7 @@
     "gulp-uglify": "~3.0",
     "gulp-vinyl-zip": "~2.2",
     "handlebars": "~4.7",
-    "highlight.js": "9.18.3",
+    "highlight.js": "10.7.3",
     "js-yaml": "~3.13",
     "merge-stream": "~2.0",
     "postcss-calc": "~7.0",

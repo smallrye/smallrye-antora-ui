@@ -31,7 +31,7 @@
 .nav {
   background: var(--nav-background);
   position: relative;
-  top: var(--toolbar-height);
+  top: 0;
   height: var(--nav-height);
 }
 
@@ -52,6 +52,11 @@
 
 .nav a {
   color: inherit;
+}
+
+.nav a:hover {
+  color: var(--link-font-color);
+  text-decoration: none;
 }
 
 .nav .panels {
@@ -106,6 +111,12 @@ html.is-clipped--nav {
   padding: 0;
 }
 
+.nav-list.nav-list-level-0,
+.nav-list.nav-list-level-1,
+.nav-list.nav-list-level-2 {
+  margin: 0;
+}
+
 .nav-menu > .nav-list + .nav-list {
   margin-top: 0.5rem;
 }
@@ -120,13 +131,16 @@ html.is-clipped--nav {
 }
 
 /* matches list without a title */
-.nav-item[data-depth="0"] > .nav-list:first-child {
+.nav-item.nav-item-level-0 > .nav-list:first-child {
   display: block;
   margin: 0;
 }
 
-.nav-item:not(.is-active) > .nav-list {
-  display: none;
+.nav-item.nav-item-level-1 > .nav-link,
+.nav-item.nav-item-level-1 > .nav-text {
+  font-weight: var(--body-font-weight-bold);
+  display: block;
+  margin: 0;
 }
 
 .nav-item-toggle {
@@ -148,7 +162,7 @@ html.is-clipped--nav {
 
 .is-current-page > .nav-link,
 .is-current-page > .nav-text {
-  font-weight: var(--body-font-weight-bold);
+  color: var(--navbar-background);
 }
 
 .nav-panel-explore {
